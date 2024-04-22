@@ -230,7 +230,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2024/04/22/cf-global-round-25/" target="_self">
         <div>
-          C. Ticket Hoarding 题意 给定一个长度为\(n\) 的正整数数组 \(a\)，求一个正整数数组 \(b\)在满足\(\sum_{i=1}^{n} b_i\)=k的条件下，求\(\sum_{i=1}^n b_i(a_i + \sum_{j=1}^{i-1}b_i)\)的最小值。 解题思路 将上述式子进行变形： \[\begin{align*} \sum_{i=1}
+          C. Ticket Hoarding题意给定一个长度为$n$ 的正整数数组 $a$，求一个正整数数组 $b$在满足$\sum_{i=1}^{n} b_i$=k的条件下，求$\sum_{i=1}^n b_i(a_i + \sum_{j=1}^{i-1}b_i)$的最小值。 解题思路将上述式子进行变形： \begin{align*} \sum_{i=1}^n b_i(a_i + \sum_{j=1}^
         </div>
       </a>
 
@@ -284,7 +284,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/11/24/%E6%80%9D%E7%BB%B4%E9%A2%98%E8%AE%AD%E7%BB%835/" target="_self">
         <div>
-          Hamon Odyssey 题意 给定一个长度为\(n\)的数组\(a\)，请你将数组划分为若干连续的段，要求每一段的逻辑与的结果之和最小，问最多划分为多少段 解题思路 根据位与性质：连续位与操作只会让结果不变或变小 由此我们可以得出结论：每一段的逻辑与的结果之和的最小值=将整个数组相与的结果  若这个最小值大于\(0\)，则最多划分成\(1\)段(因为如果划分成多个段必然会使结果
+          Hamon Odyssey题意给定一个长度为$n$的数组$a$，请你将数组划分为若干连续的段，要求每一段的逻辑与的结果之和最小，问最多划分为多少段 解题思路根据位与性质：连续位与操作只会让结果不变或变小 由此我们可以得出结论：每一段的逻辑与的结果之和的最小值=将整个数组相与的结果  若这个最小值大于$0$，则最多划分成$1$段(因为如果划分成多个段必然会使结果变大) 若这个最小值等于$0$，可以采
         </div>
       </a>
 
@@ -345,7 +345,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/11/09/kmp/" target="_self">
         <div>
-          \(KMP\)算法  求解给定一个模式串\(P\)和一个主串\(S\)，求模式串\(P\)在主串\(S\)中出现的位置(字符串的下标均从1开始)  算法思路  取最长的相等前后缀，可以保证不漏解 通过模式串前后缀的自我匹配的长度，计算\(next\)函数，给\(j\)指针打一张表，失配时就跳到\(next[j]\)的位置继续匹配   \(next\)函数：\(next[i]\)
+          $KMP$算法 求解给定一个模式串$P$和一个主串$S$，求模式串$P$在主串$S$中出现的位置(字符串的下标均从1开始)  算法思路 取最长的相等前后缀，可以保证不漏解 通过模式串前后缀的自我匹配的长度，计算$next$函数，给$j$指针打一张表，失配时就跳到$next[j]$的位置继续匹配   $next$函数：$next[i]$表示模式串$P[1,i]$中相等前后缀的最长长度  如何计算$n
         </div>
       </a>
 
@@ -406,7 +406,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/11/09/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_self">
         <div>
-          1.双指针理论部分 双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决序列的区间问题 两个指针\(i,j\)，有两种扫描方向：  同向扫描(快慢指针)：\(i,j\)方向相同，都从头到尾，一个走的慢，一个走快 反向扫描:\(i,j\)方向相反，一个从头到尾，一个从尾到头，在中间相会  双指针的核心：找单调关系：\(i\)和\(j\)的之间关系 (1)如何判断
+          1.双指针理论部分双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决序列的区间问题 两个指针$i,j$，有两种扫描方向：  同向扫描(快慢指针)：$i,j$方向相同，都从头到尾，一个走的慢，一个走快 反向扫描:$i,j$方向相反，一个从头到尾，一个从尾到头，在中间相会  双指针的核心：找单调关系：$i$和$j$的之间关系 (1)如何判断一个题目是否可以用双指针来解 因为双指
         </div>
       </a>
 
@@ -467,7 +467,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/10/21/%E6%80%9D%E7%BB%B4%E9%A2%98%E8%AE%AD%E7%BB%831/" target="_self">
         <div>
-          Consecutive Points Segment 题意 在 \(X\)轴上给出 \(N\) 个横坐标,每个点可以变为\(x_i-1\),\(x_i\),\(x_i+1\),问该序列最后是否可以变为一个接续序列 解题思路 对于一段接续的点要保证其连续性，就必须将这段接续的点作为一个整体全部向左移动一格或向右移动一格 因此，在\(X\)轴可以划分出若干条线段(各线段中间以空隙点将线段隔
+          Consecutive Points Segment题意在 $X$轴上给出 $N$ 个横坐标,每个点可以变为$x_i-1$,$x_i$,$x_i+1$,问该序列最后是否可以变为一个接续序列 解题思路对于一段接续的点要保证其连续性，就必须将这段接续的点作为一个整体全部向左移动一格或向右移动一格 因此，在$X$轴可以划分出若干条线段(各线段中间以空隙点将线段隔开)，并且最左侧线段最多只能右移一格，不能
         </div>
       </a>
 
@@ -649,21 +649,6 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
 <!-- 页面点击小红心 -->

@@ -16,12 +16,12 @@
   <meta name="author" content="fdreamer">
   <meta name="keywords" content="算法">
   
-    <meta name="description" content="$KMP$算法 求解给定一个模式串$P$和一个主串$S$，求模式串$P$在主串$S$中出现的位置(字符串的下标均从1开始)  算法思路 取最长的相等前后缀，可以保证不漏解 通过模式串前后缀的自我匹配的长度，计算$next$函数，给$j$指针打一张表，失配时就跳到$next[j]$的位置继续匹配   $next$函数：$next[i]$表示模式串$P[1,i]$中相等前后缀的最长长度  如何计算$n">
+    <meta name="description" content="\(KMP\)算法  求解给定一个模式串\(P\)和一个主串\(S\)，求模式串\(P\)在主串\(S\)中出现的位置(字符串的下标均从1开始)  算法思路  取最长的相等前后缀，可以保证不漏解 通过模式串前后缀的自我匹配的长度，计算\(next\)函数，给\(j\)指针打一张表，失配时就跳到\(next[j]\)的位置继续匹配   \(next\)函数：\(next[i]\)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kmp">
 <meta property="og:url" content="http://example.com/2023/11/09/kmp/index.html">
 <meta property="og:site_name" content="fdreamer&#39;s Blog">
-<meta property="og:description" content="$KMP$算法 求解给定一个模式串$P$和一个主串$S$，求模式串$P$在主串$S$中出现的位置(字符串的下标均从1开始)  算法思路 取最长的相等前后缀，可以保证不漏解 通过模式串前后缀的自我匹配的长度，计算$next$函数，给$j$指针打一张表，失配时就跳到$next[j]$的位置继续匹配   $next$函数：$next[i]$表示模式串$P[1,i]$中相等前后缀的最长长度  如何计算$n">
+<meta property="og:description" content="\(KMP\)算法  求解给定一个模式串\(P\)和一个主串\(S\)，求模式串\(P\)在主串\(S\)中出现的位置(字符串的下标均从1开始)  算法思路  取最长的相等前后缀，可以保证不漏解 通过模式串前后缀的自我匹配的长度，计算\(next\)函数，给\(j\)指针打一张表，失配时就跳到\(next[j]\)的位置继续匹配   \(next\)函数：\(next[i]\)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-09T13:56:03.000Z">
 <meta property="article:modified_time" content="2023-11-09T13:57:36.705Z">
@@ -217,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          747 字
+          819 字
         
       </span>
     
@@ -270,32 +270,65 @@
             
               <div class="markdown-body">
                 
-                <h2 id="KMP-算法"><a href="#KMP-算法" class="headerlink" title="$KMP$算法"></a>$KMP$算法</h2><blockquote>
-<p>求解给定一个模式串$P$和一个主串$S$，求模式串$P$在主串$S$中出现的位置(字符串的下标均从1开始)</p>
+                <h2 id="kmp算法"><span class="math inline">\(KMP\)</span>算法</h2>
+<blockquote>
+<p>求解给定一个模式串<span
+class="math inline">\(P\)</span>和一个主串<span
+class="math inline">\(S\)</span>，求模式串<span
+class="math inline">\(P\)</span>在主串<span
+class="math inline">\(S\)</span>中出现的位置(字符串的下标均从1开始)</p>
 </blockquote>
-<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><ol>
+<h3 id="算法思路">算法思路</h3>
+<ol type="1">
 <li>取最长的相等前后缀，可以保证不漏解</li>
-<li>通过模式串前后缀的自我匹配的长度，计算$next$函数，给$j$指针打一张表，失配时就跳到$next[j]$的位置继续匹配</li>
+<li>通过模式串前后缀的自我匹配的长度，计算<span
+class="math inline">\(next\)</span>函数，给<span
+class="math inline">\(j\)</span>指针打一张表，失配时就跳到<span
+class="math inline">\(next[j]\)</span>的位置继续匹配</li>
 </ol>
 <blockquote>
-<p>$next$函数：$next[i]$表示模式串$P[1,i]$中相等前后缀的最长长度</p>
+<p><span class="math inline">\(next\)</span>函数：<span
+class="math inline">\(next[i]\)</span>表示模式串<span
+class="math inline">\(P[1,i]\)</span>中相等前后缀的最长长度</p>
 </blockquote>
-<h3 id="如何计算-next-函数"><a href="#如何计算-next-函数" class="headerlink" title="如何计算$next$函数"></a><strong>如何计算$next$函数</strong></h3><blockquote>
-<p>双指针：$i$扫描模式串，$j$扫描前缀</p>
-<p>初始化：$ne[i]=0,i=2,j=0$</p>
-<ol>
-<li>若$P[i]\ne P[j+1]$，让$j$回跳能匹配的位置，如果找不到能匹配的位置，$j$回跳到$0$</li>
-<li>若$P[i]=P[j+1]$，让$j++$,指向匹配前缀的末尾</li>
-<li>$next[i]$等于$j$的值</li>
+<h3 id="如何计算next函数"><strong>如何计算<span
+class="math inline">\(next\)</span>函数</strong></h3>
+<blockquote>
+<p>双指针：<span class="math inline">\(i\)</span>扫描模式串，<span
+class="math inline">\(j\)</span>扫描前缀</p>
+<p>初始化：<span class="math inline">\(ne[i]=0,i=2,j=0\)</span></p>
+<ol type="1">
+<li>若<span class="math inline">\(P[i]\ne P[j+1]\)</span>，让<span
+class="math inline">\(j\)</span>回跳能匹配的位置，如果找不到能匹配的位置，<span
+class="math inline">\(j\)</span>回跳到<span
+class="math inline">\(0\)</span></li>
+<li>若<span class="math inline">\(P[i]=P[j+1]\)</span>，让<span
+class="math inline">\(j++\)</span>,指向匹配前缀的末尾</li>
+<li><span class="math inline">\(next[i]\)</span>等于<span
+class="math inline">\(j\)</span>的值</li>
 </ol>
 </blockquote>
-<h3 id="计算-next-函数模板"><a href="#计算-next-函数模板" class="headerlink" title="计算$next$函数模板"></a>计算$next$函数模板</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++">ne[<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>,j=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;<br>    <span class="hljs-keyword">while</span>(j&amp;&amp;p[i]!=p[j+<span class="hljs-number">1</span>]) j=ne[j];<br>    <span class="hljs-keyword">if</span>(p[i]==p[j+<span class="hljs-number">1</span>]) j++;<br>    ne[i]=j;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h3><blockquote>
-<p>$j$指针所走的总步数就决定了总的执行次数</p>
-<p>每轮$for$循环，$j$至多$+1$，那么$j$一共向右至多走$n$步，往左跳的步数加起来不会超过$n$步，否则$j$变为负数</p>
-<p>故$j$的总步数不会超过$2n$，所以时间复杂度为$O(n)$</p>
+<h3 id="计算next函数模板">计算<span
+class="math inline">\(next\)</span>函数模板</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++">ne[<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>,j=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;<br>    <span class="hljs-keyword">while</span>(j&amp;&amp;p[i]!=p[j+<span class="hljs-number">1</span>]) j=ne[j];<br>    <span class="hljs-keyword">if</span>(p[i]==p[j+<span class="hljs-number">1</span>]) j++;<br>    ne[i]=j;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="时间复杂度分析">时间复杂度分析</h3>
+<blockquote>
+<p><span
+class="math inline">\(j\)</span>指针所走的总步数就决定了总的执行次数</p>
+<p>每轮<span class="math inline">\(for\)</span>循环，<span
+class="math inline">\(j\)</span>至多<span
+class="math inline">\(+1\)</span>，那么<span
+class="math inline">\(j\)</span>一共向右至多走<span
+class="math inline">\(n\)</span>步，往左跳的步数加起来不会超过<span
+class="math inline">\(n\)</span>步，否则<span
+class="math inline">\(j\)</span>变为负数</p>
+<p>故<span class="math inline">\(j\)</span>的总步数不会超过<span
+class="math inline">\(2n\)</span>，所以时间复杂度为<span
+class="math inline">\(O(n)\)</span></p>
 </blockquote>
-<h3 id="KMP-模式串与主串匹配算法模板"><a href="#KMP-模式串与主串匹配算法模板" class="headerlink" title="$KMP$模式串与主串匹配算法模板"></a>$KMP$模式串与主串匹配算法模板</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;<br>    <span class="hljs-keyword">while</span>(j&amp;&amp;s[i]!=p[j+<span class="hljs-number">1</span>]) j=ne[j];<br>    <span class="hljs-keyword">if</span>(s[i]==p[j+<span class="hljs-number">1</span>]) j++;<br>    <span class="hljs-keyword">if</span>(j==n) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,i-n+<span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="kmp模式串与主串匹配算法模板"><span
+class="math inline">\(KMP\)</span>模式串与主串匹配算法模板</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;<br>    <span class="hljs-keyword">while</span>(j&amp;&amp;s[i]!=p[j+<span class="hljs-number">1</span>]) j=ne[j];<br>    <span class="hljs-keyword">if</span>(s[i]==p[j+<span class="hljs-number">1</span>]) j++;<br>    <span class="hljs-keyword">if</span>(j==n) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,i-n+<span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>

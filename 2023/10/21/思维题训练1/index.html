@@ -16,12 +16,12 @@
   <meta name="author" content="fdreamer">
   <meta name="keywords" content="算法">
   
-    <meta name="description" content="Consecutive Points Segment 题意 在 \(X\)轴上给出 \(N\) 个横坐标,每个点可以变为\(x_i-1\),\(x_i\),\(x_i+1\),问该序列最后是否可以变为一个接续序列 解题思路 对于一段接续的点要保证其连续性，就必须将这段接续的点作为一个整体全部向左移动一格或向右移动一格 因此，在\(X\)轴可以划分出若干条线段(各线段中间以空隙点将线段隔">
+    <meta name="description" content="Consecutive Points Segment题意在 $X$轴上给出 $N$ 个横坐标,每个点可以变为$x_i-1$,$x_i$,$x_i+1$,问该序列最后是否可以变为一个接续序列 解题思路对于一段接续的点要保证其连续性，就必须将这段接续的点作为一个整体全部向左移动一格或向右移动一格 因此，在$X$轴可以划分出若干条线段(各线段中间以空隙点将线段隔开)，并且最左侧线段最多只能右移一格，不能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="codeforces思维题训练1">
 <meta property="og:url" content="http://example.com/2023/10/21/%E6%80%9D%E7%BB%B4%E9%A2%98%E8%AE%AD%E7%BB%831/index.html">
 <meta property="og:site_name" content="fdreamer&#39;s Blog">
-<meta property="og:description" content="Consecutive Points Segment 题意 在 \(X\)轴上给出 \(N\) 个横坐标,每个点可以变为\(x_i-1\),\(x_i\),\(x_i+1\),问该序列最后是否可以变为一个接续序列 解题思路 对于一段接续的点要保证其连续性，就必须将这段接续的点作为一个整体全部向左移动一格或向右移动一格 因此，在\(X\)轴可以划分出若干条线段(各线段中间以空隙点将线段隔">
+<meta property="og:description" content="Consecutive Points Segment题意在 $X$轴上给出 $N$ 个横坐标,每个点可以变为$x_i-1$,$x_i$,$x_i+1$,问该序列最后是否可以变为一个接续序列 解题思路对于一段接续的点要保证其连续性，就必须将这段接续的点作为一个整体全部向左移动一格或向右移动一格 因此，在$X$轴可以划分出若干条线段(各线段中间以空隙点将线段隔开)，并且最左侧线段最多只能右移一格，不能">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-21T12:28:21.000Z">
 <meta property="article:modified_time" content="2023-10-21T14:38:43.718Z">
@@ -217,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.9k 字
+          5.6k 字
         
       </span>
     
@@ -228,7 +228,7 @@
         
         
         
-          49 分钟
+          48 分钟
         
       </span>
     
@@ -270,205 +270,78 @@
             
               <div class="markdown-body">
                 
-                <h2
-id="consecutive-points-segment"><a href="https://codeforces.com/problemset/problem/1671/b" target="_blank">Consecutive
-Points Segment</a></h2>
-<h3 id="题意">题意</h3>
-<p>在 <span class="math inline">\(X\)</span>轴上给出 <span
-class="math inline">\(N\)</span> 个横坐标,每个点可以变为<span
-class="math inline">\(x_i-1\)</span>,<span
-class="math inline">\(x_i\)</span>,<span
-class="math inline">\(x_i+1\)</span>,问该序列最后是否可以变为一个接续序列</p>
-<h3 id="解题思路">解题思路</h3>
-<p>对于一段接续的点要保证其连续性，就必须将<strong>这段接续的点作为一个整体</strong>全部向左移动一格或向右移动一格</p>
-<p>因此，在<span
-class="math inline">\(X\)</span>轴可以划分出若干条线段(各线段中间以<strong>空隙点</strong>将线段隔开)，并且<strong>最左侧线段最多只能右移一格，不能左移，最多能使空隙点数量减一，最右侧线段最多只能左移一格，不能右移，最多使空隙点数量减一</strong>，<strong>而移动中间线段将不改变空隙点数量</strong></p>
+                <h2 id="Consecutive-Points-Segment"><a href="#Consecutive-Points-Segment" class="headerlink" title="Consecutive Points Segment"></a><a href="https://codeforces.com/problemset/problem/1671/b" target="_blank">Consecutive Points Segment</a></h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>在 $X$轴上给出 $N$ 个横坐标,每个点可以变为$x_i-1$,$x_i$,$x_i+1$,问该序列最后是否可以变为一个接续序列</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>对于一段接续的点要保证其连续性，就必须将<strong>这段接续的点作为一个整体</strong>全部向左移动一格或向右移动一格</p>
+<p>因此，在$X$轴可以划分出若干条线段(各线段中间以<strong>空隙点</strong>将线段隔开)，并且<strong>最左侧线段最多只能右移一格，不能左移，最多能使空隙点数量减一，最右侧线段最多只能左移一格，不能右移，最多使空隙点数量减一</strong>，<strong>而移动中间线段将不改变空隙点数量</strong></p>
 <p><strong>当空隙点数量为0时即认为序列变为一个接续序列</strong></p>
-<p><strong>故只要<span
-class="math inline">\(X\)</span>轴的空隙点数量小于等于<span
-class="math inline">\(2\)</span>,就一定可以操作使序列变为接续序列，反之则不行</strong></p>
-<h3 id="解题代码">解题代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> n;<br>  cin&gt;&gt;n;<br>  <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span></span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) cin&gt;&gt;a[i];<br>  <span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<span class="hljs-comment">//用于记录空隙点数量</span><br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;n;i++)&#123;<br>    ans+=(a[i]-a[i<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span>);<br>  &#125;<br>  <span class="hljs-keyword">if</span>(ans&lt;=<span class="hljs-number">2</span>) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;YES&quot;</span>);<br>  <span class="hljs-keyword">else</span> <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;NO&quot;</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> t;<br>  cin&gt;&gt;t;<br>  <span class="hljs-keyword">while</span>(t--)<br>  <span class="hljs-built_in">solve</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="题后思考">题后思考</h3>
-<ul>
+<p><strong>故只要$X$轴的空隙点数量小于等于$2$,就一定可以操作使序列变为接续序列，反之则不行</strong></p>
+<h3 id="解题代码"><a href="#解题代码" class="headerlink" title="解题代码"></a>解题代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> n;<br>  cin&gt;&gt;n;<br>  <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span></span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) cin&gt;&gt;a[i];<br>  <span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<span class="hljs-comment">//用于记录空隙点数量</span><br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;n;i++)&#123;<br>    ans+=(a[i]-a[i<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span>);<br>  &#125;<br>  <span class="hljs-keyword">if</span>(ans&lt;=<span class="hljs-number">2</span>) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;YES&quot;</span>);<br>  <span class="hljs-keyword">else</span> <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;NO&quot;</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> t;<br>  cin&gt;&gt;t;<br>  <span class="hljs-keyword">while</span>(t--)<br>  <span class="hljs-built_in">solve</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="题后思考"><a href="#题后思考" class="headerlink" title="题后思考"></a>题后思考</h3><ul>
 <li>在考虑单点操作时，可以将其多个点的共同操作，并且遵守某个原则(该题就是遵守保持接续性原则)</li>
 <li>并且每次操作产生的影响，尽量用一个可以<strong>量化的东西来表达</strong>(该题中可以量化的东西为空隙点的数量)</li>
 </ul>
-<h2
-id="make-it-increasing"><a href="https://codeforces.com/problemset/problem/1667/a " target="_blank">Make
-it Increasing</a></h2>
-<h3 id="题意-1">题意</h3>
-<p>给定一个长度为<span class="math inline">\(n\)</span>的数组<span
-class="math inline">\(a\)</span>，一个初始化全为<span
-class="math inline">\(0\)</span>长度亦为<span
-class="math inline">\(n\)</span>的数组<span
-class="math inline">\(b\)</span></p>
-<p>可以进行操作：每次可以选择一个下标<span
-class="math inline">\(i\)</span>进行如下操作的其中一个</p>
+<h2 id="Make-it-Increasing"><a href="#Make-it-Increasing" class="headerlink" title="Make it Increasing"></a><a href="https://codeforces.com/problemset/problem/1667/a " target="_blank">Make it Increasing</a></h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>给定一个长度为$n$的数组$a$，一个初始化全为$0$长度亦为$n$的数组$b$</p>
+<p>可以进行操作：每次可以选择一个下标$i$进行如下操作的其中一个</p>
 <ul>
-<li><span class="math inline">\(b[i]+=a[i]\)</span></li>
-<li><span class="math inline">\(b[i]-=a[i]\)</span></li>
+<li>$b[i]+=a[i]$</li>
+<li>$b[i]-=a[i]$</li>
 </ul>
-<p>求使数组<span
-class="math inline">\(b\)</span>变为<strong>严格单增序列</strong>需操作的<strong>最少次数</strong></p>
-<h3 id="解题思路-1">解题思路</h3>
-<p>观察本题数据量不超过<span
-class="math inline">\(5000\)</span>，因此支持<span
-class="math inline">\(O(n^2)\)</span>做法</p>
-<p>而要使<span
-class="math inline">\(b\)</span>数组变为严格单增序列且操作次数最少，必然肯定存在一个点<span
-class="math inline">\(k\)</span>，<span
-class="math inline">\([1,k]\)</span>区间进行减法操作，<span
-class="math inline">\([k+1,n]\)</span>进行加法操作</p>
-<p><strong>那么<span
-class="math inline">\(c\)</span>数组中必然存在一个<span
-class="math inline">\(0\)</span></strong></p>
-<p>因此我们通过枚举<span
-class="math inline">\(0\)</span>的位置，假设<span
-class="math inline">\(0\)</span>所在的位置为<span
-class="math inline">\(k\)</span>，在<span
-class="math inline">\([1,k-1]\)</span>进行减法操作保证左侧递增，记进行减法操作的数量为<span
-class="math inline">\(ans\)</span>，在<span
-class="math inline">\([k+1,n]\)</span>进行加法操作保证右侧递增,记进行加法操作的数量为<span
-class="math inline">\(bns\)</span></p>
-<p>最终答案为<span class="math inline">\(res=max(ans+bns)\)</span></p>
-<h3 id="解题代码-1">解题代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span><span class="hljs-comment">//数据量小,暴力枚举位置计算即可，时间复杂度为：O(n^2)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> n;<br>  cin&gt;&gt;n;<br>  <span class="hljs-function">vector&lt;ll&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span>,<span class="hljs-title">b</span><span class="hljs-params">(n,<span class="hljs-number">0</span>)</span></span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<br>  cin&gt;&gt;a[i];<br>  ll res=<span class="hljs-number">1e18</span>,ans=<span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> pos=<span class="hljs-number">0</span>;pos&lt;n;pos++)&#123;<br>    <span class="hljs-comment">//初始化b数组</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) b[i]=<span class="hljs-number">0</span>;<br>    ans=<span class="hljs-number">0</span>;<span class="hljs-comment">//答案</span><br>    <span class="hljs-comment">//左边递减</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=pos<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br>      ll d=b[i+<span class="hljs-number">1</span>]-b[i];<br>      ll k=(d+a[i])/a[i];<span class="hljs-comment">//递减倍数</span><br>      b[i]=k*a[i];<br>      ans+=k;<br>    &#125;<br>    <span class="hljs-comment">//右边递增</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=pos+<span class="hljs-number">1</span>;i&lt;n;i++)&#123;<br>      ll d=b[i<span class="hljs-number">-1</span>]-b[i];<br>      ll k=(d+a[i])/a[i];<span class="hljs-comment">//递增倍数</span><br>      b[i]=k*a[i];<br>      ans+=k;<br>    &#125;<br>    res=<span class="hljs-built_in">min</span>(res,ans);<br>  &#125;<br>  cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-built_in">solve</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2
-id="permutation"><a href="https://codeforces.com/problemset/problem/359/B" target="_blank">Permutation</a></h2>
-<h3 id="题意-2">题意</h3>
-<p>给定<span class="math inline">\(n,k\)</span>，构造一个排列使得<span
-class="math inline">\(\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=2k\)</span></p>
-<h3 id="解题思路-2">解题思路</h3>
-<p>对于构造排列，排列无非就三种：<strong>递增排列，递减排列，摆动排列</strong></p>
+<p>求使数组$b$变为<strong>严格单增序列</strong>需操作的<strong>最少次数</strong></p>
+<h3 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h3><p>观察本题数据量不超过$5000$，因此支持$O(n^2)$做法</p>
+<p>而要使$b$数组变为严格单增序列且操作次数最少，必然肯定存在一个点$k$，$[1,k]$区间进行减法操作，$[k+1,n]$进行加法操作</p>
+<p><strong>那么$c$数组中必然存在一个$0$</strong></p>
+<p>因此我们通过枚举$0$的位置，假设$0$所在的位置为$k$，在$[1,k-1]$进行减法操作保证左侧递增，记进行减法操作的数量为$ans$，在$[k+1,n]$进行加法操作保证右侧递增,记进行加法操作的数量为$bns$</p>
+<p>最终答案为$res=max(ans+bns)$</p>
+<h3 id="解题代码-1"><a href="#解题代码-1" class="headerlink" title="解题代码"></a>解题代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span><span class="hljs-comment">//数据量小,暴力枚举位置计算即可，时间复杂度为：O(n^2)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> n;<br>  cin&gt;&gt;n;<br>  <span class="hljs-function">vector&lt;ll&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span>,<span class="hljs-title">b</span><span class="hljs-params">(n,<span class="hljs-number">0</span>)</span></span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<br>  cin&gt;&gt;a[i];<br>  ll res=<span class="hljs-number">1e18</span>,ans=<span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> pos=<span class="hljs-number">0</span>;pos&lt;n;pos++)&#123;<br>    <span class="hljs-comment">//初始化b数组</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) b[i]=<span class="hljs-number">0</span>;<br>    ans=<span class="hljs-number">0</span>;<span class="hljs-comment">//答案</span><br>    <span class="hljs-comment">//左边递减</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=pos<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br>      ll d=b[i+<span class="hljs-number">1</span>]-b[i];<br>      ll k=(d+a[i])/a[i];<span class="hljs-comment">//递减倍数</span><br>      b[i]=k*a[i];<br>      ans+=k;<br>    &#125;<br>    <span class="hljs-comment">//右边递增</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=pos+<span class="hljs-number">1</span>;i&lt;n;i++)&#123;<br>      ll d=b[i<span class="hljs-number">-1</span>]-b[i];<br>      ll k=(d+a[i])/a[i];<span class="hljs-comment">//递增倍数</span><br>      b[i]=k*a[i];<br>      ans+=k;<br>    &#125;<br>    res=<span class="hljs-built_in">min</span>(res,ans);<br>  &#125;<br>  cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-built_in">solve</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="Permutation"><a href="#Permutation" class="headerlink" title="Permutation"></a><a href="https://codeforces.com/problemset/problem/359/B" target="_blank">Permutation</a></h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>给定$n,k$，构造一个排列使得$\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=2k$</p>
+<h3 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h3><p>对于构造排列，排列无非就三种：<strong>递增排列，递减排列，摆动排列</strong></p>
 <p><strong>思考问题一般习惯从特殊一般来考虑</strong></p>
 <ul>
 <li>考虑特殊：</li>
 </ul>
-<p>假设<span class="math inline">\(a\)</span>为递增排列，那么<span
-class="math inline">\(\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=0\)</span></p>
-<p>假设<span class="math inline">\(a\)</span>为递减排列，那么<span
-class="math inline">\(\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=0\)</span></p>
+<p>假设$a$为递增排列，那么$\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=0$</p>
+<p>假设$a$为递减排列，那么$\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=0$</p>
 <ul>
 <li>考虑一般：将特殊排列中的任意几个数调换位置即变为摆动摆列</li>
 </ul>
 <p>我们发现：</p>
-<p>假设<span class="math inline">\(a\)</span>为递增排列，当每将一对<span
-class="math inline">\(a_{2i-1},a_{2i}\)</span>调换位置，将使得<span
-class="math inline">\(\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|\)</span>减少<span
-class="math inline">\(2\)</span></p>
-<p>假设<span class="math inline">\(a\)</span>为递减排列，当每将一对<span
-class="math inline">\(a_{2i-1},a_{2i}\)</span>调换位置，将使得<span
-class="math inline">\(\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|\)</span>增加<span
-class="math inline">\(2\)</span></p>
-<p>故要使得<span
-class="math inline">\(\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=2k\)</span></p>
-<p>我们可以先使序列为递减序列，然后在此基础上选择k对<span
-class="math inline">\(a_{2i-1},a_{2i}\)</span>调换位置，即可使得<span
-class="math inline">\(\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=2k\)</span></p>
-<h3 id="解题代码-2">解题代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> n,k;<br>  cin&gt;&gt;n&gt;&gt;k;<br>  vector&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">a</span>(<span class="hljs-number">2</span>*n);<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">2</span>*n;i++) a[i]=<span class="hljs-number">2</span>*n-i;<span class="hljs-comment">//初始为递减序列</span><br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;k;i++) <span class="hljs-built_in">swap</span>(a[<span class="hljs-number">2</span>*i],a[<span class="hljs-number">2</span>*i+<span class="hljs-number">1</span>]);<span class="hljs-comment">//交换a[2*i],a[2*i+1]使式子等于2*k</span><br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">2</span>*n;i++)<br>  cout&lt;&lt;a[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>  cout&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>; <br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-built_in">solve</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2
-id="lucky-chains"><a href="https://codeforces.com/problemset/problem/1766/D" target="_blank">Lucky
-Chains</a></h2>
-<h3 id="题意-3">题意</h3>
-<p>定义二元组<span
-class="math inline">\((x,y)\)</span>是幸运的当且仅当<span
-class="math inline">\(gcd(x,y)=1\)</span></p>
-<p>定义由<span class="math inline">\((x,y)\)</span>起始长度为<span
-class="math inline">\(k\)</span>的幸运链，当且仅当<span
-class="math inline">\(gcd(x+i,y+i)=1(0\le i \le k)\)</span>恒成立</p>
-<p>若给定一个二元组<span
-class="math inline">\((x,y)\)</span>,求由它生成的最长幸运链的最长长度(若长度可以为<span
-class="math inline">\(\infty\)</span>，答案记为<span
-class="math inline">\(-1\)</span>)</p>
-<h3 id="解题思路-3">解题思路</h3>
-<p>假设从<span
-class="math inline">\((x,y)\)</span>开始，中间均是幸运的，直到<span
-class="math inline">\((x+t,y+t)\)</span>不幸运即：<span
-class="math inline">\(gcd(x+t,y+t)\ne 1\)</span></p>
-<p>利用性质<span
-class="math inline">\(gcd(a,b)=gcd(a,b-a)\)</span>可得：</p>
-<p><span class="math inline">\(gcd(x+t,y+t)=gcd(x+t,y-x)\)</span></p>
-<p>易知：当<span class="math inline">\(x-y=1\)</span>时，<span
-class="math inline">\(t=\infty\)</span>,答案<span
-class="math inline">\(res=-1\)</span></p>
-<p>当<span class="math inline">\(x-y \ne 1\)</span>时，则转变求<span
-class="math inline">\(t\)</span>的最小值</p>
-<p>当<span class="math inline">\(gcd(a,b)\ne 1\)</span>时，那么<span
-class="math inline">\(a,b\)</span>至少存在一个公共质因子</p>
-<p>于是乎，上面问题可以进一步转化：对<span
-class="math inline">\(y-x\)</span>进行质因子分解(欧拉筛法(线性))，假设枚举<span
-class="math inline">\(y-x\)</span>的一个质因子为<span
-class="math inline">\(p\)</span>,</p>
-<p>则：<span class="math inline">\(t\)</span>的可能取值就是满足<span
-class="math inline">\((x+t)\%p=0\)</span>的<span
-class="math inline">\(t\)</span>，即有：<span
-class="math inline">\(t=(-x)\%p\)</span></p>
-<p>对所有可能的<span
-class="math inline">\(t\)</span>取最小，即得到最小的<span
-class="math inline">\(t\)</span>的取值，由此幸运链的长度为<span
-class="math inline">\(t\)</span>,答案<span
-class="math inline">\(res=t\)</span></p>
-<h3 id="解题代码-3">解题代码</h3>
-<blockquote>
-<p>注意要打消<code>iostream</code>的输入和输出缓存，节省时间,否则会<span
-class="math inline">\(TLE\)</span></p>
+<p>假设$a$为递增排列，当每将一对$a_{2i-1},a_{2i}$调换位置，将使得$\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|$减少$2$</p>
+<p>假设$a$为递减排列，当每将一对$a_{2i-1},a_{2i}$调换位置，将使得$\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|$增加$2$</p>
+<p>故要使得$\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=2k$</p>
+<p>我们可以先使序列为递减序列，然后在此基础上选择k对$a_{2i-1},a_{2i}$调换位置，即可使得$\sum_{i=1}^n|a_{2i-1}-a_{2i}|-|\sum_{i=1}^{n}a_{2i-1}-a_{2i}|=2k$</p>
+<h3 id="解题代码-2"><a href="#解题代码-2" class="headerlink" title="解题代码"></a>解题代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> n,k;<br>  cin&gt;&gt;n&gt;&gt;k;<br>  vector&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">a</span>(<span class="hljs-number">2</span>*n);<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">2</span>*n;i++) a[i]=<span class="hljs-number">2</span>*n-i;<span class="hljs-comment">//初始为递减序列</span><br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;k;i++) <span class="hljs-built_in">swap</span>(a[<span class="hljs-number">2</span>*i],a[<span class="hljs-number">2</span>*i+<span class="hljs-number">1</span>]);<span class="hljs-comment">//交换a[2*i],a[2*i+1]使式子等于2*k</span><br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">2</span>*n;i++)<br>  cout&lt;&lt;a[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>  cout&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>; <br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-built_in">solve</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="Lucky-Chains"><a href="#Lucky-Chains" class="headerlink" title="Lucky Chains"></a><a href="https://codeforces.com/problemset/problem/1766/D" target="_blank">Lucky Chains</a></h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>定义二元组$(x,y)$是幸运的当且仅当$gcd(x,y)=1$</p>
+<p>定义由$(x,y)$起始长度为$k$的幸运链，当且仅当$gcd(x+i,y+i)=1(0\le i \le k)$恒成立</p>
+<p>若给定一个二元组$(x,y)$,求由它生成的最长幸运链的最长长度(若长度可以为$\infty$，答案记为$-1$)</p>
+<h3 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h3><p>假设从$(x,y)$开始，中间均是幸运的，直到$(x+t,y+t)$不幸运即：$gcd(x+t,y+t)\ne 1$</p>
+<p>利用性质$gcd(a,b)=gcd(a,b-a)$可得：</p>
+<p>$gcd(x+t,y+t)=gcd(x+t,y-x)$</p>
+<p>易知：当$x-y=1$时，$t=\infty$,答案$res=-1$</p>
+<p>当$x-y \ne 1$时，则转变求$t$的最小值</p>
+<p>当$gcd(a,b)\ne 1$时，那么$a,b$至少存在一个公共质因子</p>
+<p>于是乎，上面问题可以进一步转化：对$y-x$进行质因子分解(欧拉筛法(线性))，假设枚举$y-x$的一个质因子为$p$,</p>
+<p>则：$t$的可能取值就是满足$(x+t)\%p=0$的$t$，即有：$t=(-x)\%p$</p>
+<p>对所有可能的$t$取最小，即得到最小的$t$的取值，由此幸运链的长度为$t$,答案$res=t$</p>
+<h3 id="解题代码-3"><a href="#解题代码-3" class="headerlink" title="解题代码"></a>解题代码</h3><blockquote>
+<p>注意要打消<code>iostream</code>的输入和输出缓存，节省时间,否则会$TLE$</p>
 <p>设置如下：</p>
-<p><code>std::ios::sync_with_stdio(false);</code>
-<code>std::cin.tie(0);</code></p>
+<p><code>std::ios::sync_with_stdio(false);</code><br>    <code>std::cin.tie(0);</code></p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bitset&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N=<span class="hljs-number">1e7</span>+<span class="hljs-number">10</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> INF=<span class="hljs-number">2e9</span>;<br><span class="hljs-type">int</span> minp[N];<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">euler</span><span class="hljs-params">(ll n)</span></span><br><span class="hljs-function"></span>&#123;<br>  bitset&lt;N&gt; vis;<br>  vector&lt;ll&gt; p;<br>  vis[<span class="hljs-number">0</span>]=vis[<span class="hljs-number">1</span>]=<span class="hljs-literal">true</span>;<br>  minp[<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>;<br>  <span class="hljs-keyword">for</span>(ll i=<span class="hljs-number">2</span>;i&lt;=n;i++)&#123;<br>    <span class="hljs-keyword">if</span>(!vis[i])&#123;<br>      p.<span class="hljs-built_in">push_back</span>(i);<br>      minp[i]=i;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(ll j=<span class="hljs-number">0</span>;i*p[j]&lt;=n&amp;&amp;j&lt;p.<span class="hljs-built_in">size</span>();j++)&#123;<br>      vis[i*p[j]]=<span class="hljs-literal">true</span>;<br>      minp[i*p[j]]=p[j];<br>      <span class="hljs-keyword">if</span>(i%p[j]==<span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>    &#125;<br>  &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  ll x,y;<br>  cin&gt;&gt;x&gt;&gt;y;<br>  y-=x;<br>  ll res=INF;<br>  <span class="hljs-keyword">if</span>(y==<span class="hljs-number">1</span>) res=<span class="hljs-number">-1</span>;<br>  <span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-keyword">while</span>(y&gt;<span class="hljs-number">1</span>)&#123;<br>      ll p=minp[y];<br>      res=<span class="hljs-built_in">min</span>(res,((-x)%p+p)%p);<br>      <span class="hljs-keyword">while</span>(y%p==<span class="hljs-number">0</span>) y/=p;<br>    &#125;<br>  &#125;<br>  cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  std::ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>	std::cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>  <span class="hljs-built_in">euler</span>(<span class="hljs-number">1e7</span>);<br>  <span class="hljs-type">int</span> t;<br>  cin&gt;&gt;t;<br>  <span class="hljs-keyword">while</span>(t--)<br>  <span class="hljs-built_in">solve</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2
-id="binary-string"><a href="https://codeforces.com/problemset/problem/1680/C" target="_blank">Binary
-String</a></h2>
-<h3 id="题意-4">题意</h3>
-<p>给定一个01字符串 <span class="math inline">\(s\)</span>，你需要选取
-<span class="math inline">\(s\)</span> 中的一个子串 <span
-class="math inline">\(t\)</span> ，最小化<span
-class="math inline">\(max(字串中0的个数,s中1的个数-子串t中1的个数)\)</span></p>
-<h3 id="解题思路-4">解题思路</h3>
-<p>设<span class="math inline">\(t_0\)</span>：子串<span
-class="math inline">\(t\)</span>中<span
-class="math inline">\(0\)</span>的个数，<span
-class="math inline">\(t_1\)</span>:子串<span
-class="math inline">\(t\)</span>中<span
-class="math inline">\(1\)</span>的个数，<span
-class="math inline">\(s_1\)</span>:字符串<span
-class="math inline">\(s\)</span>中1的个数</p>
-<p><span
-class="math inline">\(max(字串中0的个数,s中1的个数-子串t中1的个数)=max(t_0,s_1-t_1)=max(t_0+t_1,s_1)-t_1=max(len,s_1)-t_1\)</span>(<span
-class="math inline">\(len\)</span>为子串长度)</p>
+<h2 id="Binary-String"><a href="#Binary-String" class="headerlink" title="Binary String"></a><a href="https://codeforces.com/problemset/problem/1680/C" target="_blank">Binary String</a></h2><h3 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h3><p>给定一个01字符串 $s$，你需要选取 $s$ 中的一个子串 $t$ ，最小化$max(字串中0的个数,s中1的个数-子串t中1的个数)$</p>
+<h3 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h3><p>设$t_0$：子串$t$中$0$的个数，$t_1$:子串$t$中$1$的个数，$s_1$:字符串$s$中1的个数</p>
+<p>$max(字串中0的个数,s中1的个数-子串t中1的个数)=max(t_0,s_1-t_1)=max(t_0+t_1,s_1)-t_1=max(len,s_1)-t_1$($len$为子串长度)</p>
 <ul>
-<li>当<span class="math inline">\(len \le s_1\)</span>时，<span
-class="math inline">\(max(len,s_1)-t_1=s_1-t_1\)</span></li>
+<li>当$len \le s_1$时，$max(len,s_1)-t_1=s_1-t_1$</li>
 </ul>
-<p>由于求最小值，因此要将其最小化，<span
-class="math inline">\(s_1\)</span>为定值，我们需要<span
-class="math inline">\(t_1\)</span>尽可能大(子串中<span
-class="math inline">\(1\)</span>的数量尽可能多)，而随着<span
-class="math inline">\(len\)</span>增大，<span
-class="math inline">\(t_1\)</span>增大，故我们选择<span
-class="math inline">\(len=s_1\)</span></p>
+<p>由于求最小值，因此要将其最小化，$s_1$为定值，我们需要$t_1$尽可能大(子串中$1$的数量尽可能多)，而随着$len$增大，$t_1$增大，故我们选择$len=s_1$</p>
 <ul>
-<li>当<span class="math inline">\(len \ge s_1\)</span>时，<span
-class="math inline">\(max(len,s_1)-t_1=len-t_1=t_0\)</span></li>
+<li>当$len \ge s_1$时，$max(len,s_1)-t_1=len-t_1=t_0$</li>
 </ul>
-<p>由于求最小值，因此要将其最小化，我们需要<span
-class="math inline">\(t_0\)</span>尽可能小(子串中0的数量尽可能少)，而随<span
-class="math inline">\(len\)</span>增大，<span
-class="math inline">\(t_0\)</span>增大，故我们选择<span
-class="math inline">\(len=s_1\)</span></p>
-<p><strong>由此，最终我们只需枚举子串的右端点<span
-class="math inline">\(r(r\ge len)\)</span>,左端点<span
-class="math inline">\(l\)</span>取<span
-class="math inline">\(r-len=r-s_1\)</span>,同时子串<span
-class="math inline">\([l,r]\)</span>中<span
-class="math inline">\(0\)</span>的数量可以用前缀和维护</strong></p>
-<p><strong>答案即为：<span
-class="math inline">\(res=min(t_0)\)</span></strong></p>
-<h3 id="解题代码-4">解题代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  string s;<br>  cin&gt;&gt;s;<br>  <span class="hljs-type">int</span> len=s.<span class="hljs-built_in">size</span>();<br>  s=<span class="hljs-string">&#x27;?&#x27;</span>+s;<br>  <span class="hljs-type">int</span> sum=<span class="hljs-built_in">count</span>(s.<span class="hljs-built_in">begin</span>(),s.<span class="hljs-built_in">end</span>(),<span class="hljs-string">&#x27;1&#x27;</span>);<span class="hljs-comment">//计算s中1的数量</span><br>  <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">pre</span><span class="hljs-params">(len+<span class="hljs-number">1</span>,<span class="hljs-number">0</span>)</span></span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=len;i++)&#123;<span class="hljs-comment">//前缀和用于维护子串中0的数量</span><br>    pre[i]=pre[i<span class="hljs-number">-1</span>]+(s[i]==<span class="hljs-string">&#x27;0&#x27;</span>);<br>  &#125;<br>  <span class="hljs-type">int</span> res=sum;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=sum;i&lt;=len;i++)&#123;<span class="hljs-comment">//枚举右端点</span><br>    res=<span class="hljs-built_in">min</span>(res,pre[i]-pre[i-sum]);<br>  &#125;<br>  cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> t;<br>  cin&gt;&gt;t;<br>  <span class="hljs-keyword">while</span>(t--)<br>  <span class="hljs-built_in">solve</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>由于求最小值，因此要将其最小化，我们需要$t_0$尽可能小(子串中0的数量尽可能少)，而随$len$增大，$t_0$增大，故我们选择$len=s_1$</p>
+<p><strong>由此，最终我们只需枚举子串的右端点$r(r\ge len)$,左端点$l$取$r-len=r-s_1$,同时子串$[l,r]$中$0$的数量可以用前缀和维护</strong></p>
+<p><strong>答案即为：$res=min(t_0)$</strong></p>
+<h3 id="解题代码-4"><a href="#解题代码-4" class="headerlink" title="解题代码"></a>解题代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  string s;<br>  cin&gt;&gt;s;<br>  <span class="hljs-type">int</span> len=s.<span class="hljs-built_in">size</span>();<br>  s=<span class="hljs-string">&#x27;?&#x27;</span>+s;<br>  <span class="hljs-type">int</span> sum=<span class="hljs-built_in">count</span>(s.<span class="hljs-built_in">begin</span>(),s.<span class="hljs-built_in">end</span>(),<span class="hljs-string">&#x27;1&#x27;</span>);<span class="hljs-comment">//计算s中1的数量</span><br>  <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">pre</span><span class="hljs-params">(len+<span class="hljs-number">1</span>,<span class="hljs-number">0</span>)</span></span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=len;i++)&#123;<span class="hljs-comment">//前缀和用于维护子串中0的数量</span><br>    pre[i]=pre[i<span class="hljs-number">-1</span>]+(s[i]==<span class="hljs-string">&#x27;0&#x27;</span>);<br>  &#125;<br>  <span class="hljs-type">int</span> res=sum;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=sum;i&lt;=len;i++)&#123;<span class="hljs-comment">//枚举右端点</span><br>    res=<span class="hljs-built_in">min</span>(res,pre[i]-pre[i-sum]);<br>  &#125;<br>  cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> t;<br>  cin&gt;&gt;t;<br>  <span class="hljs-keyword">while</span>(t--)<br>  <span class="hljs-built_in">solve</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>

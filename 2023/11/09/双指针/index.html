@@ -16,12 +16,12 @@
   <meta name="author" content="fdreamer">
   <meta name="keywords" content="算法">
   
-    <meta name="description" content="1.双指针理论部分 双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决序列的区间问题 两个指针\(i,j\)，有两种扫描方向：  同向扫描(快慢指针)：\(i,j\)方向相同，都从头到尾，一个走的慢，一个走快 反向扫描:\(i,j\)方向相反，一个从头到尾，一个从尾到头，在中间相会  双指针的核心：找单调关系：\(i\)和\(j\)的之间关系 (1)如何判断">
+    <meta name="description" content="1.双指针理论部分双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决序列的区间问题 两个指针$i,j$，有两种扫描方向：  同向扫描(快慢指针)：$i,j$方向相同，都从头到尾，一个走的慢，一个走快 反向扫描:$i,j$方向相反，一个从头到尾，一个从尾到头，在中间相会  双指针的核心：找单调关系：$i$和$j$的之间关系 (1)如何判断一个题目是否可以用双指针来解 因为双指">
 <meta property="og:type" content="article">
 <meta property="og:title" content="双指针">
 <meta property="og:url" content="http://example.com/2023/11/09/%E5%8F%8C%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="fdreamer&#39;s Blog">
-<meta property="og:description" content="1.双指针理论部分 双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决序列的区间问题 两个指针\(i,j\)，有两种扫描方向：  同向扫描(快慢指针)：\(i,j\)方向相同，都从头到尾，一个走的慢，一个走快 反向扫描:\(i,j\)方向相反，一个从头到尾，一个从尾到头，在中间相会  双指针的核心：找单调关系：\(i\)和\(j\)的之间关系 (1)如何判断">
+<meta property="og:description" content="1.双指针理论部分双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决序列的区间问题 两个指针$i,j$，有两种扫描方向：  同向扫描(快慢指针)：$i,j$方向相同，都从头到尾，一个走的慢，一个走快 反向扫描:$i,j$方向相反，一个从头到尾，一个从尾到头，在中间相会  双指针的核心：找单调关系：$i$和$j$的之间关系 (1)如何判断一个题目是否可以用双指针来解 因为双指">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-09T13:34:09.000Z">
 <meta property="article:modified_time" content="2023-11-09T13:36:19.837Z">
@@ -217,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          2.7k 字
         
       </span>
     
@@ -228,7 +228,7 @@
         
         
         
-          24 分钟
+          23 分钟
         
       </span>
     
@@ -270,118 +270,46 @@
             
               <div class="markdown-body">
                 
-                <h2 id="双指针理论部分">1.双指针理论部分</h2>
-<p>双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决<strong>序列的区间问题</strong></p>
-<p>两个指针<span
-class="math inline">\(i,j\)</span>，有两种扫描方向：</p>
-<ol type="1">
-<li>同向扫描(快慢指针)：<span
-class="math inline">\(i,j\)</span>方向相同，都从头到尾，一个走的慢，一个走快</li>
-<li>反向扫描:<span
-class="math inline">\(i,j\)</span>方向相反，一个从头到尾，一个从尾到头，在中间相会</li>
+                <h2 id="1-双指针理论部分"><a href="#1-双指针理论部分" class="headerlink" title="1.双指针理论部分"></a>1.双指针理论部分</h2><p>双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决<strong>序列的区间问题</strong></p>
+<p>两个指针$i,j$，有两种扫描方向：</p>
+<ol>
+<li>同向扫描(快慢指针)：$i,j$方向相同，都从头到尾，一个走的慢，一个走快</li>
+<li>反向扫描:$i,j$方向相反，一个从头到尾，一个从尾到头，在中间相会</li>
 </ol>
-<p><strong>双指针的核心：找单调关系：<span
-class="math inline">\(i\)</span>和<span
-class="math inline">\(j\)</span>的之间关系</strong></p>
-<h3
-id="如何判断一个题目是否可以用双指针来解">(1)如何判断一个题目是否可以用双指针来解</h3>
-<ol type="1">
-<li><p>因为双指针算法是一种优化时间复杂度的方法，所以我们可以首先写出最朴素的<strong>两层循环</strong>的写法。</p></li>
-<li><p>然后考虑题目中是否具有<strong>单调性</strong>。</p></li>
+<p><strong>双指针的核心：找单调关系：$i$和$j$的之间关系</strong></p>
+<h3 id="1-如何判断一个题目是否可以用双指针来解"><a href="#1-如何判断一个题目是否可以用双指针来解" class="headerlink" title="(1)如何判断一个题目是否可以用双指针来解"></a>(1)如何判断一个题目是否可以用双指针来解</h3><ol>
+<li><p>因为双指针算法是一种优化时间复杂度的方法，所以我们可以首先写出最朴素的<strong>两层循环</strong>的写法。</p>
+</li>
+<li><p>然后考虑题目中是否具有<strong>单调性</strong>。</p>
+</li>
 </ol>
-<p><strong>即当其中一个指针<span
-class="math inline">\(i\)</span>向后移动时，在希望得到答案的情况下，另一个指针<span
-class="math inline">\(j\)</span>是不是只能向着一个方向移动。</strong></p>
-<ol start="3" type="1">
+<p><strong>即当其中一个指针$i$向后移动时，在希望得到答案的情况下，另一个指针$j$是不是只能向着一个方向移动。</strong></p>
+<ol>
 <li>如果是，说明题目具有单调性，可以通过<strong>双指针算法优化</strong>。</li>
 </ol>
-<h3 id="双指针模板">(2)双指针模板</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>    <span class="hljs-keyword">while</span>(j&lt;i&amp;&amp;<span class="hljs-built_in">check</span>(i,j)) j++;<br>    <span class="hljs-comment">//每道题目具体逻辑</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="双指针题目题解">2.双指针题目题解</h2>
-<h3
-id="最长连续不重复子序列">(1).<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/801/">最长连续不重复子序列 </a></h3>
-<h4 id="题意">题意</h4>
-<p>给定一个长度为 <span class="math inline">\(n\)</span>
-的整数序列，请找出最长的不包含重复的数的连续区间，输出它的长度</p>
-<h4 id="解题思路">解题思路</h4>
-<p>假设区间<span class="math inline">\([j,i]\)</span>是以<span
-class="math inline">\(i\)</span>为终点的最长连续不重复子序列</p>
-<p>不难发现，若<span class="math inline">\(i\)</span>向后移动(<span
-class="math inline">\(eg:i+1\)</span>)，<span
-class="math inline">\(j\)</span>只会向后或不移动，<span
-class="math inline">\(j\)</span>不可能往前移动</p>
+<h3 id="2-双指针模板"><a href="#2-双指针模板" class="headerlink" title="(2)双指针模板"></a>(2)双指针模板</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>    <span class="hljs-keyword">while</span>(j&lt;i&amp;&amp;<span class="hljs-built_in">check</span>(i,j)) j++;<br>    <span class="hljs-comment">//每道题目具体逻辑</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="2-双指针题目题解"><a href="#2-双指针题目题解" class="headerlink" title="2.双指针题目题解"></a>2.双指针题目题解</h2><h3 id="1-最长连续不重复子序列"><a href="#1-最长连续不重复子序列" class="headerlink" title="(1).最长连续不重复子序列 "></a>(1).<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/801/">最长连续不重复子序列 </a></h3><h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>给定一个长度为 $n$ 的整数序列，请找出最长的不包含重复的数的连续区间，输出它的长度</p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>假设区间$[j,i]$是以$i$为终点的最长连续不重复子序列</p>
+<p>不难发现，若$i$向后移动($eg:i+1$)，$j$只会向后或不移动，$j$不可能往前移动</p>
 <p>证明如下：</p>
-<p>假设 <span class="math inline">\([j,i]\)</span> 是以<span
-class="math inline">\(i\)</span>
-为终点的最长连续不重复子序列。如果当<span
-class="math inline">\(i\)</span> 向后移动时(比如到 <span
-class="math inline">\(i+1\)</span>)，<span
-class="math inline">\(j\)</span>却向前移动了(比如到 <span
-class="math inline">\(j−1\)</span>)。 说明 <span
-class="math inline">\([j−1,i+1]\)</span> 是以 <span
-class="math inline">\(i+1\)</span>
-为终点的<strong>最长连续不重复子序列</strong>，换句话说：<span
-class="math inline">\([j−1,i+1]\)</span>
-范围内都<strong>没有重复元素</strong>。 即：以 <span
-class="math inline">\(i\)</span> 为终点的最长连续不重复子序列应该是
-<span class="math inline">\([j−1,i]\)</span> 而不是 <span
-class="math inline">\([j,i]\)</span>，与假设相矛盾 因此可证明：
-<strong>当<span class="math inline">\(i\)</span>向后移动时，<span
-class="math inline">\(j\)</span>不可能向前移动
-（可能不动，也可以向后，就是不可能向前）</strong></p>
-<p><strong>由此我们可以用双指针在<span
-class="math inline">\(O(n)\)</span>时间复杂度解决该问题</strong></p>
-<h4 id="解题代码">解题代码</h4>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span>,<span class="hljs-title">num</span><span class="hljs-params">(<span class="hljs-number">100010</span>,<span class="hljs-number">0</span>)</span></span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) cin&gt;&gt;a[i];<br>    <span class="hljs-type">int</span> res=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>,i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        num[a[i]]++;<br>        <span class="hljs-keyword">while</span>(j&lt;i&amp;&amp;num[a[i]]&gt;<span class="hljs-number">1</span>) num[a[j]]--,j++;<br>        res=<span class="hljs-built_in">max</span>(res,i-j+<span class="hljs-number">1</span>);<br>    &#125;<br>    cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">solve</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3
-id="xor-sum-2">(2).<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc098/tasks/arc098_b">Xor Sum 2</a></h3>
-<h4 id="题意-1">题意</h4>
-<p>给定一数组，求出满足<span class="math inline">\(a_l+\cdots+a_r=a_l
-\wedge \dots \wedge a_r\)</span><span class="math inline">\(l \le
-r\)</span>的<span class="math inline">\((l,r)\)</span>的数量</p>
-<h4 id="解题思路-1">解题思路</h4>
-<p>假设<span
-class="math inline">\([l,r]\)</span>为满足题意的最大区间：满足<span
-class="math inline">\(a_l+\cdots+a_r=a_l \wedge \dots \wedge
-a_r\)</span></p>
-<p>当<span class="math inline">\(r\)</span>增大时，则有<span
-class="math inline">\(a_l+\cdots+a_r&gt;a_l \wedge \dots \wedge
-a_r\)</span>，<strong>由于异或和是不进位的加法，有</strong><span
-class="math inline">\(a_i+a_j \ge a_i \wedge a_j\)</span>，只有<span
-class="math inline">\(l\)</span>增大才能使得<span
-class="math inline">\(a_l+\cdots+a_r=a_l \wedge \dots \wedge
-a_r\)</span></p>
-<p>原因：当<span class="math inline">\(l\)</span>减小(<span
-class="math inline">\(eg:l-1\)</span>)时，根据性质<span
-class="math inline">\(a_i+a_j \ge a_i \wedge a_j\)</span>，<span
-class="math inline">\(a_{l-1}+(a_l+\cdots+a_r)&gt;a_{l-1} \wedge
-(a_l\wedge \cdots a_r)\)</span>恒成立</p>
-<h4 id="解题代码-1">解题代码</h4>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> n;<br>  cin&gt;&gt;n;<br>  <span class="hljs-function">vector&lt;ll&gt; <span class="hljs-title">a</span><span class="hljs-params">(n+<span class="hljs-number">1</span>)</span></span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) cin&gt;&gt;a[i];<br>  ll sum=<span class="hljs-number">0</span>,x=<span class="hljs-number">0</span>;<br>  ll res=<span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;<br>    <span class="hljs-keyword">while</span>(j+<span class="hljs-number">1</span>&lt;=n&amp;&amp;sum+a[j+<span class="hljs-number">1</span>]==(x^a[j+<span class="hljs-number">1</span>]))&#123;<br>      j++;<br>      sum+=a[j];<br>      x^=a[j];<br>    &#125;<br>    res+=j-i+<span class="hljs-number">1</span>;<br>    sum-=a[i];<br>    x^=a[i];<br>  &#125;<br>  cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-built_in">solve</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3
-id="连续自然数和">(3).<a href="https://www.luogu.com.cn/problem/P1147" target="_blank">连续自然数和 </a></h3>
-<h4 id="题意-2">题意</h4>
-<p>对一个给定的正整数
-<em>M</em>，求出所有的连续的正整数段（每一段至少有两个数），这些连续的自然数段中的全部数之和为
-<em>M</em>。</p>
-<h4 id="解题思路-2">解题思路</h4>
-<p>假设<span
-class="math inline">\([l,r]\)</span>为满足连续自然数之和<span
-class="math inline">\(sum==M\)</span>的区间，则当<span
-class="math inline">\(r\)</span>增大时，则有该连续自然数之和<span
-class="math inline">\(sum&gt;M\)</span></p>
+<p>假设 $[j,i]$ 是以$i$ 为终点的最长连续不重复子序列。如果当$i$ 向后移动时(比如到 $i+1$)，$j$却向前移动了(比如到 $j−1$)。<br>说明 $[j−1,i+1]$ 是以 $i+1$ 为终点的<strong>最长连续不重复子序列</strong>，换句话说：$[j−1,i+1]$ 范围内都<strong>没有重复元素</strong>。<br>即：以 $i$ 为终点的最长连续不重复子序列应该是 $[j−1,i]$ 而不是 $[j,i]$，与假设相矛盾<br>因此可证明：<br><strong>当$i$向后移动时，$j$不可能向前移动 （可能不动，也可以向后，就是不可能向前）</strong></p>
+<p><strong>由此我们可以用双指针在$O(n)$时间复杂度解决该问题</strong></p>
+<h4 id="解题代码"><a href="#解题代码" class="headerlink" title="解题代码"></a>解题代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span>,<span class="hljs-title">num</span><span class="hljs-params">(<span class="hljs-number">100010</span>,<span class="hljs-number">0</span>)</span></span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) cin&gt;&gt;a[i];<br>    <span class="hljs-type">int</span> res=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>,i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        num[a[i]]++;<br>        <span class="hljs-keyword">while</span>(j&lt;i&amp;&amp;num[a[i]]&gt;<span class="hljs-number">1</span>) num[a[j]]--,j++;<br>        res=<span class="hljs-built_in">max</span>(res,i-j+<span class="hljs-number">1</span>);<br>    &#125;<br>    cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">solve</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="2-Xor-Sum-2"><a href="#2-Xor-Sum-2" class="headerlink" title="(2).Xor Sum 2"></a>(2).<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc098/tasks/arc098_b">Xor Sum 2</a></h3><h4 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h4><p>给定一数组，求出满足$a_l+\cdots+a_r=a_l \wedge \dots \wedge a_r$$l \le r$的$(l,r)$的数量</p>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><p>假设$[l,r]$为满足题意的最大区间：满足$a_l+\cdots+a_r=a_l \wedge \dots \wedge a_r$</p>
+<p>当$r$增大时，则有$a_l+\cdots+a_r&gt;a_l \wedge \dots \wedge a_r$，<strong>由于异或和是不进位的加法，有</strong>$a_i+a_j \ge a_i \wedge a_j$，只有$l$增大才能使得$a_l+\cdots+a_r=a_l \wedge \dots \wedge a_r$</p>
+<p>原因：当$l$减小($eg:l-1$)时，根据性质$a_i+a_j \ge a_i \wedge a_j$，$a_{l-1}+(a_l+\cdots+a_r)&gt;a_{l-1} \wedge (a_l\wedge \cdots a_r)$恒成立</p>
+<h4 id="解题代码-1"><a href="#解题代码-1" class="headerlink" title="解题代码"></a>解题代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-type">int</span> n;<br>  cin&gt;&gt;n;<br>  <span class="hljs-function">vector&lt;ll&gt; <span class="hljs-title">a</span><span class="hljs-params">(n+<span class="hljs-number">1</span>)</span></span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) cin&gt;&gt;a[i];<br>  ll sum=<span class="hljs-number">0</span>,x=<span class="hljs-number">0</span>;<br>  ll res=<span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;<br>    <span class="hljs-keyword">while</span>(j+<span class="hljs-number">1</span>&lt;=n&amp;&amp;sum+a[j+<span class="hljs-number">1</span>]==(x^a[j+<span class="hljs-number">1</span>]))&#123;<br>      j++;<br>      sum+=a[j];<br>      x^=a[j];<br>    &#125;<br>    res+=j-i+<span class="hljs-number">1</span>;<br>    sum-=a[i];<br>    x^=a[i];<br>  &#125;<br>  cout&lt;&lt;res&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-built_in">solve</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="3-连续自然数和"><a href="#3-连续自然数和" class="headerlink" title="(3).连续自然数和 "></a>(3).<a href="https://www.luogu.com.cn/problem/P1147" target="_blank">连续自然数和 </a></h3><h4 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h4><p>对一个给定的正整数 <em>M</em>，求出所有的连续的正整数段（每一段至少有两个数），这些连续的自然数段中的全部数之和为 <em>M</em>。</p>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><p>假设$[l,r]$为满足连续自然数之和$sum==M$的区间，则当$r$增大时，则有该连续自然数之和$sum&gt;M$</p>
 <ul>
-<li><p>当<span class="math inline">\(l\)</span>减小时，<span
-class="math inline">\(sum\)</span>增大，<span
-class="math inline">\(sum&gt;M\)</span>恒成立</p></li>
-<li><p>当<span class="math inline">\(l\)</span>增大时，<span
-class="math inline">\(sum\)</span>减小，<span
-class="math inline">\(sum==M\)</span>可能成立</p></li>
+<li><p>当$l$减小时，$sum$增大，$sum&gt;M$恒成立</p>
+</li>
+<li><p>当$l$增大时，$sum$减小，$sum==M$可能成立</p>
+</li>
 </ul>
-<p>因此<span class="math inline">\(l\)</span>随着<span
-class="math inline">\(r\)</span>的增大而增大，满足单调性，可以使用双指针算法解决此题</p>
-<h4 id="解题代码-2">解题代码</h4>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> m;<br>    cin&gt;&gt;m;<br>    <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> l=<span class="hljs-number">1</span>,r=<span class="hljs-number">1</span>;r&lt;m;r++)&#123;<br>        sum+=r;<br>        <span class="hljs-keyword">while</span>(l&lt;r&amp;&amp;sum&gt;m)&#123;<br>            sum-=l,l++;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(sum==m) <br>            cout&lt;&lt;l&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;r&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">solve</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>因此$l$随着$r$的增大而增大，满足单调性，可以使用双指针算法解决此题</p>
+<h4 id="解题代码-2"><a href="#解题代码-2" class="headerlink" title="解题代码"></a>解题代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> m;<br>    cin&gt;&gt;m;<br>    <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> l=<span class="hljs-number">1</span>,r=<span class="hljs-number">1</span>;r&lt;m;r++)&#123;<br>        sum+=r;<br>        <span class="hljs-keyword">while</span>(l&lt;r&amp;&amp;sum&gt;m)&#123;<br>            sum-=l,l++;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(sum==m) <br>            cout&lt;&lt;l&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;r&lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">solve</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>

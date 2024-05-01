@@ -81,7 +81,119 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body>
@@ -284,7 +396,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/11/24/%E6%80%9D%E7%BB%B4%E9%A2%98%E8%AE%AD%E7%BB%835/" target="_self">
         <div>
-          Hamon Odyssey 题意 给定一个长度为\(n\)的数组\(a\)，请你将数组划分为若干连续的段，要求每一段的逻辑与的结果之和最小，问最多划分为多少段 解题思路 根据位与性质：连续位与操作只会让结果不变或变小 由此我们可以得出结论：每一段的逻辑与的结果之和的最小值=将整个数组相与的结果  若这个最小值大于\(0\)，则最多划分成\(1\)段(因为如果划分成多个段必然会使结果
+          Hamon Odyssey 题意 给定一个长度为的数组，请你将数组划分为若干连续的段，要求每一段的逻辑与的结果之和最小，问最多划分为多少段 解题思路 根据位与性质：连续位与操作只会让结果不变或变小 由此我们可以得出结论：每一段的逻辑与的结果之和的最小值=将整个数组相与的结果  若这个最小值大于，则最多划分成段(因为如果划分成多个段必然会使结果变大) 若这个最小值等于，可以采取贪心
         </div>
       </a>
 
@@ -345,7 +457,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/11/09/kmp/" target="_self">
         <div>
-          \(KMP\)算法  求解给定一个模式串\(P\)和一个主串\(S\)，求模式串\(P\)在主串\(S\)中出现的位置(字符串的下标均从1开始)  算法思路  取最长的相等前后缀，可以保证不漏解 通过模式串前后缀的自我匹配的长度，计算\(next\)函数，给\(j\)指针打一张表，失配时就跳到\(next[j]\)的位置继续匹配   \(next\)函数：\(next[i]\)
+          算法  求解给定一个模式串和一个主串，求模式串在主串中出现的位置(字符串的下标均从1开始)  算法思路  取最长的相等前后缀，可以保证不漏解 通过模式串前后缀的自我匹配的长度，计算函数，给指针打一张表，失配时就跳到的位置继续匹配   函数：表示模式串中相等前后缀的最长长度  如何计算函数  双指针：扫描模式串，扫描前缀 初始化：  若，让回跳能匹配的位置，如果找不
         </div>
       </a>
 
@@ -406,7 +518,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/11/09/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_self">
         <div>
-          1.双指针理论部分 双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决序列的区间问题 两个指针\(i,j\)，有两种扫描方向：  同向扫描(快慢指针)：\(i,j\)方向相同，都从头到尾，一个走的慢，一个走快 反向扫描:\(i,j\)方向相反，一个从头到尾，一个从尾到头，在中间相会  双指针的核心：找单调关系：\(i\)和\(j\)的之间关系 (1)如何判断
+          1.双指针理论部分 双指针是一个常用的优化技巧，是一种通过设置两个指针不断进行单向移动用来解决序列的区间问题 两个指针，有两种扫描方向：  同向扫描(快慢指针)：方向相同，都从头到尾，一个走的慢，一个走快 反向扫描:方向相反，一个从头到尾，一个从尾到头，在中间相会  双指针的核心：找单调关系：和的之间关系 (1)如何判断一个题目是否可以用双指针来解  因为双指针算法是一种优化时
         </div>
       </a>
 
@@ -467,7 +579,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/10/21/%E6%80%9D%E7%BB%B4%E9%A2%98%E8%AE%AD%E7%BB%831/" target="_self">
         <div>
-          Consecutive Points Segment 题意 在 \(X\)轴上给出 \(N\) 个横坐标,每个点可以变为\(x_i-1\),\(x_i\),\(x_i+1\),问该序列最后是否可以变为一个接续序列 解题思路 对于一段接续的点要保证其连续性，就必须将这段接续的点作为一个整体全部向左移动一格或向右移动一格 因此，在\(X\)轴可以划分出若干条线段(各线段中间以空隙点将线段隔
+          Consecutive Points Segment 题意 在 轴上给出  个横坐标,每个点可以变为,,,问该序列最后是否可以变为一个接续序列 解题思路 对于一段接续的点要保证其连续性，就必须将这段接续的点作为一个整体全部向左移动一格或向右移动一格 因此，在轴可以划分出若干条线段(各线段中间以空隙点将线段隔开)，并且最左侧线段最多只能右移一格，不能左移，最多能使空隙点数量减一，最右侧线
         </div>
       </a>
 

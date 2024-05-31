@@ -342,7 +342,7 @@ mjx-container[display="true"] + br {
       
       <a class="index-excerpt index-excerpt__noimg" href="/2024/05/31/Codeforces%20Round%20949-(Div.2)B%E9%A2%98%E9%A2%98%E8%A7%A3/" target="_self">
         <div>
-          B. Turtle and an Infinite Sequence题意有一个无限长的序列 。初始：  每过一秒，序列中的每个元素都会同时发生变化，具体变化为：每一个变化为(特别地，变化为) 问：秒后的值 解题思路不难发现，秒后(其中) 而求解到的或和，我们按位枚举二进制位，累加该二进制位对答案的贡献值，即为。 具体来说：  若区间[l,r]存在有二进制位为的数，则其对答案的贡献值为,反之该位对答
+          B. Turtle and an Infinite Sequence 题意 有一个无限长的序列 。初始： 每过一秒，序列中的每个元素都会同时发生变化，具体变化为：每一个变化为(特别地，变化为) 问：秒后的值 解题思路 不难发现，秒后(其中) 而求解到的或和，我们按位枚举二进制位，累加该二进制位对答案的贡献值，即为。 具体来说：  若区间[l,r]存在有二进制位为的数，则其对答
         </div>
       </a>
 
@@ -944,6 +944,21 @@ mjx-container[display="true"] + br {
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
 <!-- 页面点击小红心 -->
